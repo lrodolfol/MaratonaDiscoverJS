@@ -1,0 +1,24 @@
+<style>
+    .my-custom-select popup {
+      width: 300px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+      padding: 10px;
+      box-shadow: none;
+      margin: 10px 0;
+      border: 1px solid;
+      background: #f7f7f7;
+    }
+  </style>
+  <selectmenu class="my-custom-select">
+    <div slot="listbox">
+      <popup behavior="listbox">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+        <option>Option 4</option>
+        <option>Option 5</option>
+      </popup>
+    </div>
+  </selectmenu>

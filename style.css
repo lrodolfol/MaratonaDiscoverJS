@@ -1,0 +1,315 @@
+:root {
+    --dark-blue: #363f5f;
+    --blue: #0000CD;
+    --light-blue: #0000FF;
+    --red: #e92929;
+}
+
+* { /*DA UM RESETADA NO DOCUMENTO*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 93.75; /* O TAMANHO DA FONTA EM 100% É DE 16px. 93.75 = 15 PX */
+}
+
+body {
+    background-color: #f0f2f5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sr-only { /*UMA FORMA DE SUMIR COM OS TITULO VISIVELMENTE. PARA OS LEITORES DE SITE ELE AINDA ESTA LA */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: react(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.container {
+    width: min(90vw, 80%);  /*alterado,  80% era 900 px*/
+    margin: auto;
+}
+
+/* =======TITLES=========*/
+h2 {
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark-blue);
+    font-weight: normal; /*400*/
+}
+
+
+/* =======LINKS AND BUTTONS=========*/
+a {
+    color: var(--blue);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--light-blue);
+}
+button {
+    width: 100%;
+    height: 50px;
+
+    border: none;
+
+    color: white;
+    background: var(--blue);
+    padding: 0;
+
+    border-radius: 2rem;
+
+    cursor: pointer;
+}
+button:hover {
+    background: var(--light-blue);
+    cursor: pointer;
+}
+.button.new {
+    display: inline-block; /* O BLOCK PEGA TODA LINHA . O INLINE DEIXA NO TAMANHO DO COMPONENTE*/
+    margin-bottom: 0.8rem;
+}
+.button.cancel {
+    color: var(--red);
+    border: 2px var(--red) solid;
+    border-radius: 2rem;
+
+    height: 50px;
+
+    /* ALINHA DADOS AO CENTRO */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.6;
+}
+.button.cancel:hover {
+    opacity: 1;
+}
+
+/* =======HEADER=========*/
+header {
+ background-color: #191970;
+ padding: 2rem 0 17rem;
+ text-align: center;
+}
+#logo {
+    color: #fff;
+    font-weight: 100;
+}
+
+
+
+/* =======BALANCE=========*/
+#balance {
+    margin-top: -8rem;
+}
+#balance h2 {
+    color: white;
+    margin-top: 0;
+}
+
+
+/* =======CARDS=========*/
+.card {
+    background-color: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 2rem;
+
+    margin-bottom: 2rem;
+
+}
+.card h3 {
+    font-weight: normal;
+    font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*ESPAÇO ENTRE OS ELEMENTOS
+}
+.card p {
+    font-size: 2rem;
+    line-height: 3rem;  /* SEPARAÇÃO DE UMA LINHA PARA OUTRA */
+    margin-top: 1rem;
+}
+.card.total {
+    background-color: var(--blue);
+    color: white;
+}
+
+
+
+/* =======TABELA=========*/
+#transactions {
+    display: block; /* */
+    width: 100%;
+    overflow-x: auto; /* USADO JUNTO COM DISPLAY BLOCK PARA DISLIZAR PELA TELA SEM AFETAR O RESTO DOS ELEMENTO*/
+}
+#data-table {
+    border-spacing: 0rem 1rem ;
+    width: 100%;
+    color: #969cb3;
+}
+table thead tr th:first-child, 
+table tbody tr td:first-child {
+    border-radius: 5rem 0 0 5rem;
+}
+table thead tr th:last-child, 
+table tbody tr td:last-child {
+    border-radius: 0 5rem 5rem 0;
+}
+
+table th {
+    background-color: #fff;
+
+    font-weight: normal;
+    padding: 1rem 2rem;
+
+    text-align: left;
+}
+
+table tbody tr {
+    opacity: 0.7;
+}
+table tbody tr:hover {
+    opacity: 1;
+    color: black;
+}
+
+table td {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    font-weight: normal;
+}
+
+table td img.imgRemove:hover {
+    cursor: pointer;
+}
+
+td.description {
+    color: var(--dark-blue);
+}
+
+td.income {
+    color: #12a454;
+}
+
+td.expense {
+    color: #e92929
+}
+
+
+
+
+/*=============FORM==========*/
+#form {
+    max-width: 500px;
+}
+#form h2 {
+    margin-top: 0;
+}
+#form form input { /*TODOS INPUT DENTRO DO FORM DA CLASSA FORM */
+    border: none;
+    border-radius: 2rem;
+
+    padding: 0.8rem;
+    width: 100%;
+}
+#form form .input-group {
+    margin-top: 0.8rem;
+    
+}
+#form form .input-group small{
+    opacity: 0.4;    
+}
+#form form .input-group.actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#form form .input-group.actions .button,
+#form form .input-group.actions button{
+    width: 48%;
+}
+
+
+/*=============MODAL==========*/
+.modal-overlay{
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.7);
+
+    position: fixed;
+    top: 0; /* SOBE LA PARA O TOPO DA TELA */
+
+    display: flex; /* AJUSTAS À ESQUERDA */
+    align-items: center; /* DIMINUI CENTRO ESQUERDO DA TELA */
+    justify-content: center; /* AJUSTA BEM AO CENTRO DA TELA */
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 999;
+}
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal {
+    background-color: #F0F2f5;
+    padding: 2.4rem;
+    position: relative;
+
+    width: 90%;
+    max-width: 500px;
+
+    
+}
+
+/* =======FOOTER=========*/
+footer{
+    text-align: center;
+    padding: 4rem 0rem 2rem;
+    color: var(--dark-blue);
+
+    opacity: 0.6;
+}
+footer .developer a {
+    text-decoration: none;
+}
+
+footer .developer a :hover{
+    opacity: 1;
+    color: black;
+}
+
+
+
+
+
+
+/*========RESPONSIVE=======*/
+/* AT RULES */
+@media (min-width: 800px) {
+
+    html {
+        font-size: 87.5%; /* 14px */
+    }
+
+    #balance {
+        /* FLEX UM AO LADO DO OUTRO */
+        display: grid;
+        /*grid-template-columns: 1fr 1fr 1fr; */ /* FR = FRAÇÃO, FICA BEM FLEXIVEL. PODE USAR PIXEL.. OQ QUISER*/
+        grid-template-columns: repeat(3, 1fr); /* 3 PQ TENHO 3 ELEMENTOS DE CARD. SE TIVESSE MAIS ENTAO SERIA ex: repeat(5, 1rf)*/
+        gap: 2rem; /* GAP = ESPAÇO ENTRE AS COLUNAS*/
+    }
+
+}
